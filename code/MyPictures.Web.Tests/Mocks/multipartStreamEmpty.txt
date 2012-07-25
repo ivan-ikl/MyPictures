@@ -1,0 +1,10 @@
+﻿
+-----------------------------7dcfd134057c
+Content-Disposition: form-data; name="file"; filename="D:\test.txt"
+Content-Type: text/xml
+
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoResponder LastSave="2012-03-27T11:27:55.1074177-03:00" FiddlerVersion="2.3.9.3">
+  <State Enabled="false" Fallthrough="false" />
+</AutoResponder>
+-----------------------------7dcfd134057c--

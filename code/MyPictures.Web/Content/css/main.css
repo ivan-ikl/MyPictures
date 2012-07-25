@@ -1,0 +1,41 @@
+#content { padding-top: 50px; }
+.loading { min-height: 100px; background-image: url(../img/ajax-loader.gif); background-repeat: no-repeat; background-position: center center; }
+.loading * { display: none; }
+
+.idParameter { font-size: 24px; line-height: 25px; height: 25px; width: 450px; margin: 0 2px; }
+.tagParameter { font-size: 24px; line-height: 25px; height: 25px; width: 150px; margin: 0 2px; }
+
+pre { min-height: 50px; }
+
+/* blinking links on PRE */
+pre a * { color: blue !important; }
+
+fieldset .close { float: right; margin: 4px; }
+
+
+input::-webkit-input-placeholder {
+   font-style: italic !important;
+}
+
+.help-inline.error {
+  	color: #b94a48;
+}
+.help-inline {
+	color: #999;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+#pictorePostResponseContainer {
+	position: absolute; margin-left: 300px;
+}
+
+input[type="file"] {
+    width: 400px;
+    height: 2.7em;
+}
+
+form input[type="submit"] {
+    margin: 0px;
+    display: block;
+}

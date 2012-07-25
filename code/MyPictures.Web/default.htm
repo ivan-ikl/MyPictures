@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MyPictures - Web API Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="content/css/bootstrap.css" rel="stylesheet">
+    <link href="content/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="content/css/main.css" rel="stylesheet">
+    <link href="content/css/prettify.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./default.htm">My Pictures</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="/">Web API Client</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="content">
+      <p>
+        This page provides a simple client using jQuery to access the Web API Controller.
+      </p>
+      <section>
+
+        <fieldset>
+          <h2>GET /pictures</h2>
+          <input type="button" class="btn" value="Get Pictures" data-bind="click: ui.retrievePictures" />
+          <div data-bind="visible: ui.picturesResponse() || ui.picturesLoading()">
+            <h3>Response:</h3>
+            <a class="btn btn-inverse close" data-bind="click: ui.closePictures">Close</a>
+            <pre class="prettyprint" data-bind="formattedJson: ui.picturesResponse, css: { 'loading': ui.picturesLoading }"></pre>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <h2>GET /pictures/<input type="text" placeholder="id" data-bind="value: ui.pictureId" class="idParameter" /></h2>
+          <input type="button" class="btn" value="Get Picture" data-bind="click: ui.retrievePicture" />
+          <div data-bind="visible: ui.pictureResponse() || ui.pictureLoading()">
+            <h3>Response:</h3>
+            <a class="btn btn-inverse close" data-bind="click: ui.closePicture">Close</a>
+            <pre class="prettyprint" data-bind="formattedJson: ui.pictureResponse, css: { 'loading': ui.pictureLoading }"></pre>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <h2>DELETE /pictures/<input type="text" placeholder="id" data-bind="value: ui.deletePictureId" class="idParameter" /></h2>
+          <input type="button" class="btn" value="Delete Picture" data-bind="click: ui.deletePicture" />
+          <div data-bind="visible: ui.pictureDeleteResponse() || ui.pictureDeleting()">
+            <h3>Response:</h3>
+            <a class="btn btn-inverse close" data-bind="click: ui.closePictureDelete">Close</a>
+            <pre class="prettyprint" data-bind="formattedJson: ui.pictureDeleteResponse, css: { 'loading': ui.pictureDeleting }"></pre>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+            <div data-bind="visible: ui.picturePostResponse() || ui.picturePostSubmitting()" id="pictorePostResponseContainer">
+                <h2>Response:</h2>
+                <a class="btn btn-inverse close" data-bind="click: ui.closePicturePostResponse">Close</a>
+                <pre id="picturePostResponse" data-bind="formattedJson: ui.picturePostResponse, css: { 'loading': ui.picturePostSubmitting }"></pre>
+            </div>
+
+            <h2>POST /pictures</h2>
+
+            <form id="picturePostForm" class="vertical" action="/api/pictures" method="post" enctype="multipart/form-data">
+				<label for="Name">Name:</label>
+				<input type="text" name="Name" id="Name" data-val="true" data-val-required="The Name is required" />
+				<span class="field-validation-valid help-inline error" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+				
+				<label for="Description">Description:</label>
+				<textarea name="Description" cols="20" id="Description" data-val="true" data-val-required="The Description is required" rows="5"></textarea>
+				<span class="field-validation-valid help-inline error" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+
+				<label for="Tags">Tags:</label>
+				<input type="text" name="Tags" id="Tags" data-val="true" data-val-required="Tags are required" /><span class="help-inline">(e.g. tag1, tag2)</span>
+				<span class="field-validation-valid help-inline error" data-valmsg-for="Tags" data-valmsg-replace="true"></span>
+
+				<label for="PictureFile">Picture:</label>
+				<input type="file" name="PictureFile" id="PictureFile" data-val="true" data-val-required="The Picture File is required" />
+				
+				<span class="field-validation-valid help-inline error" data-valmsg-for="PictureFile" data-valmsg-replace="true"></span>
+				
+				<input class="btn btn-primary" type="submit" value="Post" />
+            </form>
+
+        </fieldset>        
+        
+        <hr />
+
+        <fieldset>
+          <h2>GET /tags</h2>
+          <input type="button" class="btn" value="Get Tags" data-bind="click: ui.retrieveTags" />
+          <div data-bind="visible: ui.tagsResponse() || ui.tagsLoading()">
+            <h3>Response:</h3>
+            <a class="btn btn-inverse close" data-bind="click: ui.closeTags">Close</a>
+            <pre class="prettyprint" data-bind="formattedJson: ui.tagsResponse, css: { 'loading': ui.tagsLoading }"></pre>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <h2>GET /tags/<input type="text" placeholder="name" data-bind="value: ui.tag" class="tagParameter" />/pictures</h2>
+          <input type="button" class="btn" value="Get Tag Pictures" data-bind="click: ui.retrieveTagPictures" />
+          <div data-bind="visible: ui.tagPicturesResponse() || ui.tagPicturesLoading()">
+            <h3>Response:</h3>
+            <a class="btn btn-inverse close" data-bind="click: ui.closeTagPictures">Close</a>
+            <pre class="prettyprint" data-bind="formattedJson: ui.tagPicturesResponse, css: { 'loading': ui.tagPicturesLoading }"></pre>
+          </div>
+        </fieldset>
+
+        <hr />
+
+      </section>
+    </div>
+
+    <script type="text/javascript" src="content/js/json2.js "></script>
+    <script type="text/javascript" src="content/js/jquery-1.7.2.min.js "></script>
+    <script type="text/javascript" src="content/js/jquery.form.js "></script>
+    <script type="text/javascript" src="content/js/prettify.js"></script>
+    <script type="text/javascript" src="content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="content/js/knockout-2.0.0.js"></script>
+    <script type="text/javascript" src="content/js/jquery.validate.min.js"></script>   
+    <script type="text/javascript" src="content/js/jquery.validate.unobtrusive.min.js"></script> 
+    <script type="text/javascript" src="content/js/ui.js"></script> 
+
+  </body>
+</html>
