@@ -22,3 +22,6 @@ The sample was built using [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4), [ASP.NE
 
 ### Detailed Instructions ###
 A set of detailed instructions on how to set up the sample can be accessed on the sample's [GitHub.com repository page](https://github.com/WindowsAzure-Samples/MyPictures/blob/master/SAMPLE.md "Detailed Sample Walk-through").
+
+### MSDN Samples Site ###
+This sample is also provided via the [MSDN Windows Azure Samples Site](http://code.msdn.microsoft.com/MyPictures-on-Windows-91bb3057). You can download the code for the sample from MSDN [here](http://code.msdn.microsoft.com/MyPictures-on-Windows-91bb3057/file/62175/2/MyPictures%20on%20Windows%20Azure%20Web%20Sites.zip). 
