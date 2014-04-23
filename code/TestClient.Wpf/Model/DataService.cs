@@ -8,7 +8,7 @@ namespace TestClient.Wpf.Model
         {
             // Use this to connect to the actual data service
 
-            var item = new DataItem("jeffa my pictures test client");
+            var item = new DataItem("Azure MyPictures test client");
             callback(item, null);
         }
     }

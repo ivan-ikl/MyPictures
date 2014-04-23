@@ -12,7 +12,7 @@
         Height="305"
         Width="815"
         
-        Title="jeffa my pictures test client"
+        Title="Azure MyPictures test client"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
 
     <Window.Resources>

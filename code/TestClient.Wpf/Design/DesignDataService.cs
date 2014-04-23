@@ -9,7 +9,7 @@ namespace TestClient.Wpf.Design
         {
             // Use this to create design time data
 
-            var item = new DataItem("jeffa my pictures [design]");
+            var item = new DataItem("Azure MyPictures [design]");
             callback(item, null);
         }
     }

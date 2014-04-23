@@ -25,3 +25,6 @@ A set of detailed instructions on how to set up the sample can be accessed on th
 
 ### MSDN Samples Site ###
 This sample is also provided via the [MSDN Windows Azure Samples Site](http://code.msdn.microsoft.com/MyPictures-on-Windows-91bb3057). You can download the code for the sample from MSDN [here](http://code.msdn.microsoft.com/MyPictures-on-Windows-91bb3057/file/62175/2/MyPictures%20on%20Windows%20Azure%20Web%20Sites.zip). 
+
+### WPF test/demo client ###
+This WPF sample test client demonstrates posting to the the web api. Upon receiving the resource location from a successful post a Qr Code is generated representing the URL to the resource as well as displaying the posted image.
